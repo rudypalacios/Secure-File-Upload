@@ -1,0 +1,10 @@
+##Prevent image hacking / 6Th. layer
+<filesMatch "\.(pjpe?g|jpe?g)$">
+    ForceType image/jpeg
+</filesMatch>
+<filesMatch "\.(gif)$">
+  ForceType image/gif  
+</filesMatch>
+<filesMatch "\.(png)$">
+   ForceType image/png
+</filesMatch>
