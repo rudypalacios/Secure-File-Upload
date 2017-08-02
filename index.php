@@ -7,9 +7,7 @@
 * @copyright Just keep the author :)
 */
 
-/* == CONFIGURATION ==*/
-	//Name of the "file" field in your form
-		define('_FIELD_NAME','my_image');
+/* == CONFIGURATION ==*/		
 	//Path where your image will be temporarily uploaded for processing
 		define('_UPLOAD_TMP','/my/temp/folder');
 	//Path where the processed image will be moved to
@@ -38,7 +36,7 @@
 */
 function imageUpload($files){
 	//File info
-		$filename = $files[_FIELD_NAME];
+		$filename = $files['name'];
 		$file_extension = strrchr($filename, ".");
 		//5th. layer, change/encode name
 		$new_filename = md5($filename.microtime()).$file_extension;
