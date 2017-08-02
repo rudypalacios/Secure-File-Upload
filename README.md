@@ -1,4 +1,5 @@
 # Carga segura de archivos con PHP
+#### *Con creación de imagen miniatura (thumbnail)
 - Una de las formas más comunes de infectar sitios, es con la carga de código malicioso a través de supuestas imágenes que se suben a un sitio web, este código no supone ser infalible, pero sí proporcionar un método de verificación de 6 capas cubriendo:
 
 | Capas de seguridad
@@ -27,7 +28,7 @@ Hay muchas otras técnicas que pueden ser implementadas cuando a carga de archiv
 ---
 
 # Secure file upload with PHP
-
+#### *With thumbnail creation
 - One of the most common ways to infect sites is to load malicious code through supposed images uploaded to a website, this code is not supposed to be infallible, but it does provide a 6-layer verification method covering:
 
 | Security layers
