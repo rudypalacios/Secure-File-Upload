@@ -1,3 +1,4 @@
+![status: stable](https://img.shields.io/badge/Status-stable-green.svg)
 # Carga segura de archivos con PHP
 #### *Con creación de imagen miniatura (thumbnail)
 - Una de las formas más comunes de infectar sitios, es con la carga de código malicioso a través de supuestas imágenes que se suben a un sitio web, este código no supone ser infalible, pero sí proporcionar un método de verificación de 6 capas cubriendo:
