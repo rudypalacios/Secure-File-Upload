@@ -36,7 +36,7 @@
 */
 function imageUpload($files){
 	//File info
-		$filename = $files['name'];
+		$filename = strtolower($files['name']);
 		$file_extension = strrchr($filename, ".");
 		//5th. layer, change/encode name
 		$new_filename = md5($filename.microtime()).$file_extension;
@@ -85,7 +85,7 @@ function imageUpload($files){
 * @return 	 bool 					TRUE on success, FALSE on error.
 *
 */
-function recreateImage($file,$new_filename,$thumbnail = false) {
+function recreateImage($file,$new_filename,$thumbnail = true) {
 
 	//Set data
 		$result 		= false;

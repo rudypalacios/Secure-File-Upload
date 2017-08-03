@@ -1,5 +1,5 @@
 ##Prevent image hacking / 6Th. layer
-<filesMatch "\.(pjpe?g|jpe?g)$">
+<filesMatch "\.(p?jpe?g)$">
     ForceType image/jpeg
 </filesMatch>
 <filesMatch "\.(gif)$">
