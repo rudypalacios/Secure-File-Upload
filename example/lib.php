@@ -2,9 +2,9 @@
 /**
 * Image upload and thumbnail creation
 *
-* @author 	 Rudy Palacios <rudypalacios at gmail.com>
-* @see 		 https://github.com/rudypalacios/Secure-File-Upload
-* @copyright Just keep the author :)
+* @author 	 	Rudy Palacios <rudypalacios at gmail.com>
+* @see 		 	https://github.com/rudypalacios/Secure-File-Upload
+* @copyright 	Just keep the author :)
 */
 
 /* == CONFIGURATION ==*/		
@@ -110,6 +110,8 @@ function recreateImage($file,$new_filename,$thumbnail = true) {
 				case "image/png":
 					$im = @imagecreatefrompng($tmp_src);
 					if($im !== false){
+						//Support transparency
+						imagesavealpha($im, true);
 						$result = imagepng($im, $dest,8.5);
 					}
 				break;
@@ -163,7 +165,15 @@ function createThumbnail($new_filename,$im,$mime,$desired_width=_THUMB_WIDTH,$pa
 	    
 	    /* create a new, "virtual" image */
 	    	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-	    
+
+		/* preserve transparency */
+			if($mime == "image/png"){
+				imagealphablending($virtual_image, false);
+				imagesavealpha($virtual_image, true);
+				imagecolortransparent($virtual_image, imagecolorallocatealpha($virtual_image, 0, 0, 0, 127));
+
+			}
+
 	    /* copy source image at a resized size */
 	    	imagecopyresampled($virtual_image, $im, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
 	    
